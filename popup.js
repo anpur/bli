@@ -87,8 +87,15 @@ const search = query => {
 
 const showInitialHelp = () => {
     resultsDiv.innerHTML = "<span class='grayed'>"
-        + "<img src='icon-2x.png' alt='bli' /><br />Bli cat is both amazed and disgusted by the number of your tabs"
-        + "</span>"
+        + "<img src='icon-2x.png' alt='bli' style='float: right;' />"
+        + "Bli cat is both amazed and disgusted by the number of your tabs.<br /><br />"
+        + "To start BLI with a shortcut open <a href='#' id='open-extensions'>Extensions</a> and click <em>Keyboard shortcuts</em> on the bottom right"
+        + " (<kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> is recomended)."
+        + "</span>";
+
+    document.getElementById('open-extensions').addEventListener('click', e => {
+        chrome.tabs.create({ url: "chrome://extensions" });
+    });
 };
 
 const showNoResults = (query) => {
@@ -147,6 +154,7 @@ const selectTab = id => {
     }, function (tabs) {
         chrome.tabs.update(id, { highlighted: true });
         tabs.filter(tab => tab.id !== id)
-            .forEach(tab => chrome.tabs.update(tab.id, { highlighted: false }));        
+            .forEach(tab => chrome.tabs.update(tab.id, { highlighted: false }));
     });
 };
+
