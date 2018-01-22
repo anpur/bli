@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>My popup</title>
+  <style type="text/css">
+    body {
+      margin: 10px;
+    }
+
+    #container {
+      justify-content: space-between;
+      width: 500px;
+    }
+
+    #search {
+      border: 0px solid black;
+      width: 100%;
+      font-size: large;
+    }
+
+    #results {
+      width: 100%;
+      padding: 0px;      
+      margin: 0px;
+      margin-top: 3px;
+    }
+
+    .result {
+      background-color: lightyellow;
+      margin: 0px;
+      padding: 2px;
+      margin-bottom: 3px;   
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .favicon-image {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <input id="search" type="text" />
+    <br />
+    <div id="results">Results</div>
+  </div>
+</body>
+
+</html>

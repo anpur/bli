@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Browser Line Interface",
+    "description": "",
+    "version": "1.0",
+    "author": "Anton Purin (purin.anton@gmail.com)",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Browser Line Interface"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "bookmarks",
+        "history"
+    ]
+}
