@@ -42,7 +42,7 @@ const search = query => {
 
         return "<div class='result' data-id='" + tab.id + "'>"
             + number
-            + "<img class='favicon-image' src='" + tab.favIconUrl + "' alt='favicon' />"
+            + "<img class='favicon-image' src='" + tab.favIconUrl + "' />"
             + "<a href='#'>" + title + "</a>"
             + "<div class='hint'>" + (isTitle ? tab.url : tab.title) + "</div>"
             + "</div>";
@@ -68,7 +68,9 @@ const search = query => {
             filteredTabs.push("<span class='grayed'>" + totalCount + " tabs were found but showing only " + showLimit + "</span>")
         }
 
-        filteredTabs.splice(0, 0, "<span class='grayed'>press CTRL + # to open tab</span>")
+        filteredTabs.splice(0, 0, filteredTabs.length !== 1
+            ? "<span class='grayed'>press <strong>CTRL + NUMBER</strong> to open some tab</span>"
+            : "<span class='grayed'>press <strong>ENTER</strong> to open this tab</span>")
 
         resultsDiv.innerHTML = filteredTabs.join('');
 
