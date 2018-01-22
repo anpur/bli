@@ -17,31 +17,55 @@
       border: 0px solid black;
       width: 100%;
       font-size: large;
+      padding: 3px;
+    }
+
+    input:focus {
+      outline: none;
     }
 
     #results {
       width: 100%;
-      padding: 0px;      
+      padding: 0px;
       margin: 0px;
-      margin-top: 3px;
+      margin-top: 5px;
     }
 
     .result {
-      background-color: lightyellow;
       margin: 0px;
       padding: 2px;
-      margin-bottom: 3px;   
+      margin-bottom: 3px;
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
 
+    .number {
+      font-size: large;
+      margin-right: 5px;
+    }
+
+    .hint {
+      color: darkgray;
+      font-size: smaller;
+      padding-bottom: 1px;
+      padding-left: 0px;
+    }
+
+    .shortcut {
+      color: gray;
+    }
+
     .favicon-image {
       width: 16px;
       height: 16px;
       vertical-align: middle;
-      padding-right: 5px;
+      padding-right: 3px;
+    }
+    
+    .grayed {
+      color: gray;
     }
   </style>
   <script src="popup.js"></script>
