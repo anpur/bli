@@ -73,7 +73,7 @@ function search(query) {
         case bookmarkPrefix: return searchForBookmark(potentialPrefixedQuery);
         case historyPrefix: return searchForHistory(potentialPrefixedQuery);
         case textPrefix: return searchForText(potentialPrefixedQuery);
-        default: return tabs.searchForTabs(query);
+        default: return searchForTabs(query);
     }
 }
 
